@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>¿Quieres tener una cena esta noche conmigo?</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>¿Quieres tener una cena esta noche conmigo?</h1>
+        <div class="btn-group">
+            <button id="siBtn" class="btn si-btn">SI</button>
+            <button id="noBtn" class="btn no-btn">NO</button>
+        </div>
+    </div>
+    <script>
+        const siBtn = document.getElementById('siBtn');
+        const noBtn = document.getElementById('noBtn');
+
+        siBtn.addEventListener('mouseenter', () => {
+            siBtn.style.left = '10px';
+        });
+
+        siBtn.addEventListener('mouseleave', () => {
+            siBtn.style.left = '0';
+        });
+
+        siBtn.addEventListener('click', () => {
+            const message = document.createElement('p');
+            message.innerText = 'Te espero el jueves a las 7:15 pm en el lugar de siempre, ponte Bellako para tener una noche magestuosa.';
+            message.classList.add('message');
+            document.body.appendChild(message);
+        });
+
+        noBtn.addEventListener('click', () => {
+            alert('Otra vez será :(');
+        });
+
+        // Función para mover el botón "no" al azar
+        function moveNoButton() {
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        }
+
+        noBtn.addEventListener('mousemove', () => {
+            moveNoButton();
+        });
+
+        // Llamar a la función cada 2 segundos
+        setInterval(moveNoButton, 2000);
+    </script>
+</body>
+
+</html>

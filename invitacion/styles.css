@@ -1,0 +1,118 @@
+body {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+body {
+    
+    background-color: #fcefee;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 60px;
+    color: #d32f2f;
+}
+
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: #d32f2f;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.si-btn:hover {
+    background-color: #b575a5;
+    transform: translateX(5px);
+}
+
+.no-btn:hover {
+    background-color: #474747;
+    transform: translateX(-5px);
+}
+
+.message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: #d32f2f;
+    margin-top: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px; /* Cambiar tamaño de fuente */
+    color: #d32f2f;
+    margin-top: 30px;
+    animation: fadeIn 2s ease-in-out, shake 0.5s ease-in-out; /* Agregar efecto de animación */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(5px); }
+    20% { transform: translateX(-5px); }
+    30% { transform: translateX(5px); }
+    40% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    70% { transform: translateX(5px); }
+    80% { transform: translateX(-5px); }
+    90% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+
+
+.message.show {
+    animation: messageShow 0.5s ease-in-out;
+  }
+  
+  .message.hide {
+    animation: messageHide 0.5s ease-in-out;
+  }
+  
+  @keyframes messageShow {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes messageHide {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+  
